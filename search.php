@@ -12,7 +12,7 @@ require_once 'includes/functions.php';
 		
 if (isset($_GET['type'])) {
 	$type = sanitizeMySQL($conn, $_GET['type']);
-	$query = "SELECT 'e_name','type','date','g_number' FROM `events` WHERE `type` = ".$type;
+	$query = "SELECT `e_name` `type` `date` `g_number` FROM `events` WHERE `type` = ".$type;
 	$result = $conn->query($query);
 	if (!$result) die ("No event found with type of $type.");
 	$rows = $result->num_rows;
